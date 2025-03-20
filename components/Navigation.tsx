@@ -1,50 +1,108 @@
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <nav className="py-4 px-6 mb-8 text-center" style={{ backgroundColor: 'rgb(92, 225, 233)' }}>
-      <div className="container mx-auto flex justify-between items-center">
-        
-
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
-
-        {/* Navigation links */}
-        <div className={`${isOpen ? 'block' : 'hidden'} md:block absolute md:relative top-16 md:top-0 left-0 right-0 md:flex bg-white md:bg-transparent p-4 md:p-0 shadow-lg md:shadow-none `}>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-          <Link
-          href="/"
-          className="text-4xl font-bold  text-center" // 增大字体
+    <nav
+      className="py-4 px-6 mb-8"
+      style={{
+        backgroundColor: 'rgb(81, 137, 9)',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        position: 'relative', // Add relative positioning for animation
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          marginLeft: '260px',
+          marginTop: '20px',
+        }}
+      >
+        <div
+          className="text-6xl font-bold"
           style={{
-            color: 'white', 
-            fontFamily: 'Bubbleboddy',  
+            color: 'white',
+            fontFamily: 'Bubbleboddy',
           }}
         >
           Wingchi
-        </Link>
-            <Link href="/blog" className="nav-link">
-              Blog
-            </Link>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            marginLeft: '50px',
+          }}
+        >
+          <div
+            className="text-4xl font-bold"
+            style={{
+              color: 'white',
+              fontFamily: 'AgrandirNarrow',
+              fontStyle: 'italic',
+              lineHeight: '1.2',
+            }}
+          >
+            coding,
+          </div>
+          <div
+            className="text-4xl font-bold"
+            style={{
+              color: 'white',
+              fontFamily: 'AgrandirNarrow',
+              fontStyle: 'italic',
+              lineHeight: '1.2',
+            }}
+          >
+            building,
+          </div>
+          <div
+            className="text-4xl font-bold"
+            style={{
+              color: 'white',
+              fontFamily: 'AgrandirNarrow',
+              fontStyle: 'italic',
+              lineHeight: '1.2',
+            }}
+          >
+            shipping
           </div>
         </div>
       </div>
+      <img
+        src="/bigjump.jpg" // 替换为你的图片路径
+        alt="Profile"
+        style={{
+          width: '80px', // 调整图片大小
+          height: '80px', // 调整图片大小
+          borderRadius: '50%', // 设置为圆形
+          marginLeft: 'auto', // 将图片推到最右边
+          marginRight: '20px', // 调整右边距
+          animation: 'rotate 10s linear infinite', // 添加旋转动画
+        }}
+      />
       <style global jsx>{`
         @font-face {
           font-family: 'Bubbleboddy';
-          src: url('/fonts/Bubbleboddy-Neue-Extrabold-Inline-trial.ttf') format('truetype'); /* 确保路径正确 */
+          src: url('/fonts/Bubbleboddy-Neue-Extrabold-Inline-trial.ttf') format('truetype');
           font-weight: normal;
           font-style: normal;
+        }
+        @font-face {
+          font-family: 'AgrandirNarrow';
+          src: url('/fonts/agrandir-narrow.otf') format('opentype');
+          font-weight: normal;
+          font-style: normal;
+        }
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
         }
       `}</style>
     </nav>

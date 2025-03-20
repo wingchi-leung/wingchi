@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'My Gaming Portfolio',
-  description: 'Personal website and blog with gaming aesthetics',
+  title: "Casey的个人网站",
+  description: 'Personal website and blog   ',
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navigation />
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-6">
           {children}
         </main>
       </body>
