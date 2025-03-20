@@ -22,12 +22,11 @@ async function getBlogPosts(): Promise<BlogPost[]> {  // Create an async functio
       const { data, content } = matter(fileContents);
 
       // 将 Markdown 转换为 HTML
-      const html = marked(content);
-      return {
+       return {
         title: data.title ,
         excerpt: data.excerpt || '',
         slug: filename.replace(/\.md$/, ''),
-        html,
+        
       };
     })
   );

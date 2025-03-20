@@ -1,7 +1,8 @@
 ---
-title: "NextJS终极指南"
+title: "My second Blog"
 date: 24, August, 2021
 ---
+
 
 # Welcome to my blog
 
