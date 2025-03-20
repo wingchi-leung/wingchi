@@ -75,8 +75,8 @@ export default function Navigation() {
         src="/bigjump.jpg" // 替换为你的图片路径
         alt="Profile"
         style={{
-          width: '80px', // 调整图片大小
-          height: '80px', // 调整图片大小
+          width: '100px', // 调整图片大小
+          height: '100px', // 调整图片大小
           borderRadius: '50%', // 设置为圆形
           marginLeft: 'auto', // 将图片推到最右边
           marginRight: '20px', // 调整右边距
