@@ -2,7 +2,7 @@ import { Code } from 'lucide-react';
 import fs from 'fs/promises'; // Import fs.promises for async file reading
 import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
+ 
 
 // Define the type for a blog post
 interface BlogPost {

@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
-import ReactMarkdown from 'react-markdown'
+ 
 
 interface BlogPostProps {
   params: {
@@ -19,7 +19,7 @@ async function getBlogPost(slug: string): Promise<{ title: string; html: string;
     const { data, content } = matter(fileContents);
 
     // Ensure marked is used correctly
-    const html = await marked(content); // Await the marked function here
+    const html = await marked(content);
 
     return {
       title: data.title || 'No Title',
@@ -27,7 +27,7 @@ async function getBlogPost(slug: string): Promise<{ title: string; html: string;
     };
   } catch (error) {
     console.error(`Error reading or parsing blog post ${slug}:`, error);
-    return null; // Or throw the error, or return a default object
+    return null;
   }
 }
 
@@ -40,27 +40,16 @@ export async function generateStaticParams() {
   }));
 }
 
-
 export default async function BlogPost({ params }: BlogPostProps) {
   const { slug } = params;
   const post = await getBlogPost(slug);
 
+ 
   if (!post) {
-    return <div>Blog post not found</div>; // Or a custom 404 page
+    return <div>Blog post not found</div>;
   }
 
   return (
-    <div className="container mx-auto py-8">
-      {/* <h1 className="text-3xl font-bold mb-4">{post.title}</h1> */}
-      <head>
-        <title>Demo Blog | {post.title}</title>
-      </head>
-      
-      <hr />
-      <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
-      {/* <ReactMarkdown> */}
-        {/* {post.html} */}
-      {/* </ReactMarkdown> */}
-    </div>
+      <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: post.html }} />
   );
 }
