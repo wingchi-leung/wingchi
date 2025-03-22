@@ -9,6 +9,7 @@ interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
+
 }
 
 async function getBlogPosts(): Promise<BlogPost[]> {  // Create an async function to fetch blog posts
@@ -19,7 +20,7 @@ async function getBlogPosts(): Promise<BlogPost[]> {  // Create an async functio
     filenames.map(async (filename) => { // Mark the map function as async
       const filePath = path.join(blogsDirectory, filename);
       const fileContents = await fs.readFile(filePath, 'utf8'); // Use await
-      const { data, content } = matter(fileContents);
+      const { data } = matter(fileContents);
 
       // 将 Markdown 转换为 HTML
        return {
@@ -39,10 +40,12 @@ export default async function Home() {
   const blogs = await getBlogPosts(); // Await the result of getBlogPosts
 
   return (
-    <div className="min-h-screen">
+   
+      <div className="min-h-screen">
+     
       <section className="mb-20">
         <h2 className="text-2xl mb-8 flex items-center gap-2">
-          <Code className="w-6 h-6" style={{ color: 'rgb(225, 208, 189)' }} />
+          <Code className="w-6 h-6" style={{ color: 'rgb(99, 99, 99)' }} />
           Latest Posts
         </h2>
         <div>
@@ -59,5 +62,7 @@ export default async function Home() {
         </div>
       </section>
     </div>
+ 
+    
   );
 }

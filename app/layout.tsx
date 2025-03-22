@@ -15,8 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navigation />
-        <main className="container mx-auto px-4 py-6">
+      <Navigation />
+        <main className="container mx-auto ">
           {children}
         </main>
       </body>

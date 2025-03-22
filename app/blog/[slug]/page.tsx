@@ -23,6 +23,7 @@ async function getBlogPost(slug: string): Promise<{ title: string; html: string;
 
     return {
       title: data.title || 'No Title',
+      
       html: html,
     };
   } catch (error) {

@@ -23,7 +23,7 @@ export default function Navigation() {
         <div
           className="text-6xl font-bold"
           style={{
-            color: 'white',
+            color: 'rgb(225, 208, 189)',
             fontFamily: 'Bubbleboddy',
           }}
         >
