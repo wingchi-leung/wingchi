@@ -1,5 +1,5 @@
 backend:
-  name:  git-gateway# 或者 github, bitbucket, gitea, etc.
+  name:  git-gateway # 或者 github, bitbucket, gitea, etc.
   repo: wingchi-leung/blog # 你的 Git 仓库
   branch: main # 或者 master，你想要编辑的分支
 
