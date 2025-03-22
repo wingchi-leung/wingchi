@@ -80,7 +80,7 @@ export default function Navigation() {
           borderRadius: '50%', // 设置为圆形
           marginLeft: 'auto', // 将图片推到最右边
           marginRight: '20px', // 调整右边距
-          animation: 'rotate 10s linear infinite', // 添加旋转动画
+          animation: 'rotate 50s linear infinite', // 添加旋转动画
         }}
       />
       <style global jsx>{`
