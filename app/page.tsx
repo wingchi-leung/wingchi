@@ -2,7 +2,7 @@ import { Code } from 'lucide-react';
 import fs from 'fs/promises'; // Import fs.promises for async file reading
 import path from 'path';
 import matter from 'gray-matter';
- 
+import Image from 'next/image';
 
 // Define the type for a blog post
 interface BlogPost {
@@ -23,11 +23,11 @@ async function getBlogPosts(): Promise<BlogPost[]> {  // Create an async functio
       const { data } = matter(fileContents);
 
       // 将 Markdown 转换为 HTML
-       return {
-        title: data.title ,
+      return {
+        title: data.title,
         excerpt: data.excerpt || '',
         slug: filename.replace(/\.md$/, ''),
-        
+
       };
     })
   );
@@ -40,9 +40,47 @@ export default async function Home() {
   const blogs = await getBlogPosts(); // Await the result of getBlogPosts
 
   return (
-   
-      <div className="min-h-screen">
-     
+
+    <div className="min-h-screen">
+      <section className="mb-20">
+        <h2 className="text-2xl mb-8 flex items-center gap-2">
+          <Code className="w-6 h-6" style={{ color: 'rgb(84, 35, 266)' }} />
+          Latest Projects
+        </h2>
+        <div className="gallery-grid">
+          <a href="https://pixel-earth.pages.dev/game" target="_blank" rel="noopener noreferrer">
+            <div className="gallery-item pixel-border p-4">
+              <div className="aspect-video relative mb-4 pixel-corners overflow-hidden">
+                <Image
+                  src="asset/pixel-earth.gif"
+                  alt="Pixel Earth"
+                  fill
+                  className="object-cover"
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
+              <h3 className="text-lg mb-2" style={{ color: 'rgb(0, 255, 224)' }}>Pixel Earth</h3>
+              <p className="text-sm">用Blender+enable3d做了个地球</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/wingchi-leung/easyfill" target="_blank" rel="noopener noreferrer">
+            <div className="gallery-item pixel-border p-4">
+              <div className="aspect-video relative mb-4 pixel-corners overflow-hidden">
+                <Image
+                  src="/asset/easyfill.png"
+                  alt="easyfill"
+                  fill
+                  className="object-cover"
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
+              <h3 className="text-lg mb-2" style={{ color: 'rgb(0, 255, 224)' }}>EeayFill</h3>
+              <p className="text-sm">让你的浏览器随处有一个专属的txt记事本</p>
+            </div>
+          </a>
+        </div>
+      </section>
       <section className="mb-20">
         <h2 className="text-2xl mb-8 flex items-center gap-2">
           <Code className="w-6 h-6" style={{ color: 'rgb(99, 99, 99)' }} />

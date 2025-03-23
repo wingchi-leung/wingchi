@@ -1,17 +1,43 @@
 "use client";
+
 import '../app/globals.css';
+import localFont from 'next/font/local'
+
+const bubbleboddy = localFont({
+  src: '../public/fonts/bubble-inlie.ttf',
+  display: 'swap',
+})
+
+const agrandirNarrow = localFont({
+  src: '../public/fonts/agrandir-narrow.otf',
+  display: 'swap',
+})
+
 export default function Navigation() {
   return (
     <nav
-      className="py-4 px-6 mb-8"
+      className="py-4 px-6 mb-8 relative"  
       style={{
         backgroundColor: 'rgb(81, 137, 9)',
         display: 'flex',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        position: 'relative', // Add relative positioning for animation
       }}
     >
+      <img
+        src="/bigjump.jpg" // 替换为你的图片路径
+        alt="Profile"
+        style={{
+          width: '100px', // 调整图片大小
+          height: '100px', // 调整图片大小
+          borderRadius: '50%', // 设置为圆形
+          marginLeft: '20px',  
+          marginRight: '20px', 
+          animation: 'rotate 50s linear infinite', // 添加旋转动画
+          animationDelay: '0s', // 添加 animation-delay 属性
+
+        }}
+      />
       <div
         style={{
           display: 'flex',
@@ -21,10 +47,9 @@ export default function Navigation() {
         }}
       >
         <div
-          className="text-6xl font-bold"
+          className={`text-6xl font-bold ${bubbleboddy.className}`}
           style={{
             color: 'rgb(225, 208, 189)',
-            fontFamily: 'Bubbleboddy',
           }}
         >
           Wingchi
@@ -37,10 +62,9 @@ export default function Navigation() {
           }}
         >
           <div
-            className="text-4xl font-bold"
+            className={`text-4xl font-bold ${agrandirNarrow.className}`}
             style={{
               color: 'white',
-              fontFamily: 'AgrandirNarrow',
               fontStyle: 'italic',
               lineHeight: '1.2',
             }}
@@ -48,65 +72,28 @@ export default function Navigation() {
             coding,
           </div>
           <div
-            className="text-4xl font-bold"
+            className={`text-4xl font-bold ${agrandirNarrow.className}`}
             style={{
               color: 'white',
-              fontFamily: 'AgrandirNarrow',
               fontStyle: 'italic',
-              lineHeight: '1.2',
+              lineHeight: 1.2,
             }}
           >
             building,
           </div>
           <div
-            className="text-4xl font-bold"
+            className={`text-4xl font-bold ${agrandirNarrow.className}`}
             style={{
               color: 'white',
-              fontFamily: 'AgrandirNarrow',
               fontStyle: 'italic',
-              lineHeight: '1.2',
+              lineHeight: 1.2,
             }}
           >
             shipping
           </div>
         </div>
       </div>
-      <img
-        src="/bigjump.jpg" // 替换为你的图片路径
-        alt="Profile"
-        style={{
-          width: '100px', // 调整图片大小
-          height: '100px', // 调整图片大小
-          borderRadius: '50%', // 设置为圆形
-          marginLeft: 'auto', // 将图片推到最右边
-          marginRight: '20px', // 调整右边距
-          animation: 'rotate 50s linear infinite', // 添加旋转动画
-          animationDelay: '0s', // 添加 animation-delay 属性
-
-        }}
-      />
-      <style global jsx>{`
-        @font-face {
-          font-family: 'Bubbleboddy';
-          src: url('/fonts/Bubbleboddy-Neue-Extrabold-Inline-trial.ttf') format('truetype');
-          font-weight: normal;
-          font-style: normal;
-        }
-        @font-face {
-          font-family: 'AgrandirNarrow';
-          src: url('/fonts/agrandir-narrow.otf') format('opentype');
-          font-weight: normal;
-          font-style: normal;
-        }
-        @keyframes rotate {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
+      
     </nav>
   );
 }
