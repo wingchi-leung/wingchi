@@ -1,7 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
-import localFont from 'next/font/local'
 export const metadata: Metadata = {
   title: "Blog | 路边广播",
   description: 'Street Blog',

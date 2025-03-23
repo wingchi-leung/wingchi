@@ -24,7 +24,7 @@ export default function Navigation() {
         alignItems: 'center',
       }}
     >
-      <img
+      {/* <img
         src="/bigjump.jpg" // 替换为你的图片路径
         alt="Profile"
         style={{
@@ -37,7 +37,7 @@ export default function Navigation() {
           animationDelay: '0s', // 添加 animation-delay 属性
 
         }}
-      />
+      /> */}
       <div
         style={{
           display: 'flex',
@@ -62,35 +62,16 @@ export default function Navigation() {
           }}
         >
           <div
-            className={`text-4xl font-bold ${agrandirNarrow.className}`}
+            className={`text-3xl font-bold ${agrandirNarrow.className}`}
             style={{
               color: 'white',
               fontStyle: 'italic',
               lineHeight: '1.2',
             }}
           >
-            coding,
+            Coding, Writing  and  Shipping
           </div>
-          <div
-            className={`text-4xl font-bold ${agrandirNarrow.className}`}
-            style={{
-              color: 'white',
-              fontStyle: 'italic',
-              lineHeight: 1.2,
-            }}
-          >
-            building,
-          </div>
-          <div
-            className={`text-4xl font-bold ${agrandirNarrow.className}`}
-            style={{
-              color: 'white',
-              fontStyle: 'italic',
-              lineHeight: 1.2,
-            }}
-          >
-            shipping
-          </div>
+           
         </div>
       </div>
       

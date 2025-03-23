@@ -44,8 +44,8 @@ export default async function Home() {
     <div className="min-h-screen">
       <section className="mb-20">
         <h2 className="text-2xl mb-8 flex items-center gap-2">
-          <Code className="w-6 h-6" style={{ color: 'rgb(84, 35, 266)' }} />
-          Latest Projects
+          <Code className="w-6 h-6" style={{ color: 'rgb(99, 99, 99)' }} />
+          最近的项目
         </h2>
         <div className="gallery-grid">
           <a href="https://pixel-earth.pages.dev/game" target="_blank" rel="noopener noreferrer">
@@ -59,7 +59,7 @@ export default async function Home() {
                   style={{ objectFit: 'contain' }}
                 />
               </div>
-              <h3 className="text-lg mb-2" style={{ color: 'rgb(0, 255, 224)' }}>Pixel Earth</h3>
+              <h3 className="text-lg mb-2" style={{ color: 'rgb(99, 99, 99)'}}>Pixel Earth</h3>
               <p className="text-sm">用Blender+enable3d做了个地球</p>
             </div>
           </a>
@@ -75,7 +75,7 @@ export default async function Home() {
                   style={{ objectFit: 'contain' }}
                 />
               </div>
-              <h3 className="text-lg mb-2" style={{ color: 'rgb(0, 255, 224)' }}>EeayFill</h3>
+              <h3 className="text-lg mb-2" style={{ color: 'rgb(99, 99, 99)'}}>EeayFill</h3>
               <p className="text-sm">让你的浏览器随处有一个专属的txt记事本</p>
             </div>
           </a>
@@ -84,7 +84,7 @@ export default async function Home() {
       <section className="mb-20">
         <h2 className="text-2xl mb-8 flex items-center gap-2">
           <Code className="w-6 h-6" style={{ color: 'rgb(99, 99, 99)' }} />
-          Latest Posts
+          最近的文章
         </h2>
         <div>
           {blogs && blogs.map((post) => (
