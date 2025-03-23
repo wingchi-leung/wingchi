@@ -1,5 +1,5 @@
 "use client";
-
+import '../app/globals.css';
 export default function Navigation() {
   return (
     <nav
@@ -81,6 +81,8 @@ export default function Navigation() {
           marginLeft: 'auto', // 将图片推到最右边
           marginRight: '20px', // 调整右边距
           animation: 'rotate 50s linear infinite', // 添加旋转动画
+          animationDelay: '0s', // 添加 animation-delay 属性
+
         }}
       />
       <style global jsx>{`
