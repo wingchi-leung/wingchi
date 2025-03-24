@@ -69,7 +69,7 @@ export default function Navigation() {
               lineHeight: '1.2',
             }}
           >
-            Coding, Writing  and  Shipping
+            Coding, Writing  and Shipping
           </div>
            
         </div>
