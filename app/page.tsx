@@ -80,21 +80,7 @@ export default async function Home() {
             </div>
           </a>
 
-          <a href="https://github.com/wingchi-leung/sdm-system/tree/master" target="_blank" rel="noopener noreferrer">
-            <div className="gallery-item pixel-border p-4">
-              <div className="aspect-video relative mb-4 pixel-corners overflow-hidden">
-                <Image
-                  src="/asset/sdm-system.jpg"
-                  alt="sdm-system"
-                  fill
-                  className="object-cover"
-                  style={{ objectFit: 'contain' }}
-                />
-              </div>
-              <h3 className="text-lg mb-2" style={{ color: 'rgb(99, 99, 99)'}}>EeayFill</h3>
-              <p className="text-sm">一个基于Python FastApi+React的签到系统</p>
-            </div>
-          </a>
+          
         </div>
       </section>
       <section className="mb-20">
@@ -105,7 +91,7 @@ export default async function Home() {
         <div>
           {blogs && blogs.map((post) => (
             <div key={post.slug} className="mb-6 border-2 border-black p-4">
-              <h3 className="text-lg mb-2">
+              <h3 className="text-lg mb-2"  >
                 <a href={`/blog/${post.slug}`} className="hover:underline">
                   {post.title}
                 </a>
