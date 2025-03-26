@@ -18,7 +18,7 @@ export default function Navigation() {
     <nav
       className="py-4 px-6 mb-8 relative"  
       style={{
-        backgroundColor: 'rgb(81, 137, 9)',
+        backgroundColor: 'rgb(250,249,245)',
         display: 'flex',
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -49,10 +49,10 @@ export default function Navigation() {
         <div
           className={`text-6xl font-bold ${bubbleboddy.className}`}
           style={{
-            color: 'rgb(225, 208, 189)',
+            color: 'rgb(171, 155, 137)',
           }}
         >
-          Wingchi
+          🙌Wingchi
         </div>
         <div
           style={{
@@ -64,7 +64,7 @@ export default function Navigation() {
           <div
             className={`text-3xl font-bold ${agrandirNarrow.className}`}
             style={{
-              color: 'white',
+              color: 'rgb(171, 155, 137)',
               fontStyle: 'italic',
               lineHeight: '1.2',
             }}

@@ -2,7 +2,7 @@ import { Code } from 'lucide-react';
 import fs from 'fs/promises'; // Import fs.promises for async file reading
 import path from 'path';
 import matter from 'gray-matter';
-import Image from 'next/image';
+ 
 
 // Define the type for a blog post
 interface BlogPost {
@@ -42,10 +42,10 @@ export default async function Home() {
   return (
 
     <div className="min-h-screen">
-      <section className="mb-20">
+      {/* <section className="mb-20">
         <h2 className="text-2xl mb-8 flex items-center gap-2">
           <Code className="w-6 h-6" style={{ color: 'rgb(99, 99, 99)' }} />
-          最近的项目
+       
         </h2>
         <div className="gallery-grid">
           <a href="https://pixel-earth.pages.dev/game" target="_blank" rel="noopener noreferrer">
@@ -82,12 +82,9 @@ export default async function Home() {
 
           
         </div>
-      </section>
+      </section> */}
       <section className="mb-20">
-        <h2 className="text-2xl mb-8 flex items-center gap-2">
-          <Code className="w-6 h-6" style={{ color: 'rgb(99, 99, 99)' }} />
-          最近的文章
-        </h2>
+       
         <div>
           {blogs && blogs.map((post) => (
             <div key={post.slug} className="mb-6 border-2 border-black p-4">

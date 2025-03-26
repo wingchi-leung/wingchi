@@ -26,14 +26,14 @@ export default function RootLayout({
         aria-label="View source on GitHub"
         style={{
           zIndex: 1000,
-          backgroundColor: 'rgb(81, 137, 9)', // 设置背景颜色
+          backgroundColor: 'rgb(250,249,245)', // 设置背景颜色
         }}
       >
         <svg
           width="90px" // 调整图标大小
           height="90px" // 调整图标大小
           viewBox="0 0 250 250"
-           style={{ fill: '#518909', color: '#fff' }} //
+           style={{ fill: 'rgb(91 75 38)', color: '#fff' }} //
           aria-hidden="true"
         >
           <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z" />
