@@ -27,7 +27,7 @@ ReAct核心思想是要求大模型不断重复地去推理、行动、观察 �
  
 (a) 标准，(b) 思考链（CoT，仅推理），(c) 仅行动，和(d)  ReAct（推理+行动）
 
- ![[Pasted image ReAct.png]]
+![ReAct](/blog_asset/ReAct.png)
 
 可以看到只有ReAct回答正确，LLM在每次行动后，还会观察行动的结果并推理下一步的行动。
 
