@@ -8,8 +8,9 @@ date: 3,24,2025
 > 本文只记录当前个人调试和阅读OpenManus代码的理解，可能会出现纰漏或理解错误！！  
 ### 整体架构
 
-核心目录，功能已经很清晰了。 
-![[Pasted image 20250329204030.png]]
+核心目录，功能已经很清晰了。 20250329204030
+ 
+![architecture](/blog_asset/20250329204030.png)
 
 
 目前应该是只用了下图几个Agent，其他的如SWE Agent貌似还没有用上。围绕着 Manus Agent做了任务的拆分和编排。  继承图如下： 
@@ -40,7 +41,9 @@ OpenManus正是基于ReAct的算法构建的。
 ### 运行流程
 
 跑起来调试几次可以看清楚函数的调用过程
-![[Pasted image 20250329173749.png]]
+ 
+<img src="public/blog_asset/20250330200230.png" alt="function call chain" />
+
 
 1.  执行起点 base.run() 控制整体流程
 2. ReAct循环，ReAct.step()是核心的ReAct算法思考-行动循环步骤
