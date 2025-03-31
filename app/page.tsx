@@ -9,6 +9,7 @@ interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
+  date:string ; 
 
 }
 
@@ -27,10 +28,18 @@ async function getBlogPosts(): Promise<BlogPost[]> {  // Create an async functio
         title: data.title,
         excerpt: data.excerpt || '',
         slug: filename.replace(/\.md$/, ''),
+        date : data.date 
 
       };
     })
   );
+
+    // 根据日期排序（降序）
+    blogs.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB.getTime() - dateA.getTime(); // 降序排序
+    });
 
   return blogs;
 }
