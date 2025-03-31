@@ -40,7 +40,3 @@ generateStaticParams是一个服务端函数，用来生成动态路由的静态
 
 
 
-
-### nextJs13升级
-
-

@@ -26,15 +26,6 @@ Agent的兴起少不了LLM在一些关键能力的快速进化，例如理解复
 
 Anthropic 的[代码仓库](https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/agents)里面有一个Antrhopic基于自家API构建工作流的CookBook。
 
-[未完待续... 等我看完回来更新]
-
-### ReAct框架 
-ReAct是最近比较流行的一个构建Agent的框架，比如OpenManus就采用了这种框架来指导LLM行动。 
-
-ReAct：Synergizing Reasoing and Actiong In Language Models  在大语言模型中协同推理和行动
-
-ReAct算法的核心是通过交替进行Reasoning和Acting的方式帮助智能体更好地应对和解决复杂问题。
-[未完待续... 等我看完回来更新]
 
 
 
