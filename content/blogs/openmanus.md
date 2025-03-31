@@ -8,14 +8,15 @@ date: 3,24,2025
 > 本文只记录当前个人调试和阅读OpenManus代码的理解，可能会出现纰漏或理解错误！！  
 ### 整体架构
 
-核心目录，功能已经很清晰了。 20250329204030
+核心目录，功能已经很清晰了。  
  
 ![architecture](/blog_asset/20250329204030.png)
 
 
 目前应该是只用了下图几个Agent，其他的如SWE Agent貌似还没有用上。围绕着 Manus Agent做了任务的拆分和编排。  继承图如下： 
+![openmanus](/blog_asset/openmanus.png)
 
-![[openmanus art.png]]
+ 
 
 在解释几个Agent之前，先了解一篇关键2022年发布的论文： **ReAct：Synergizing Reasoing and Actiong In Language Models 在大语言模型中协同推理和行动。** 其中提出了一种引导LLMs完成任务的新思路。  
 
@@ -42,8 +43,8 @@ OpenManus正是基于ReAct的算法构建的。
 
 跑起来调试几次可以看清楚函数的调用过程
  
-<img src="public/blog_asset/20250330200230.png" alt="function call chain" />
 
+![function call chain](/blog_asset/20250329173749.png)
 
 1.  执行起点 base.run() 控制整体流程
 2. ReAct循环，ReAct.step()是核心的ReAct算法思考-行动循环步骤
@@ -61,7 +62,9 @@ tool_context=None llm=<app.llm.LLM object at 0x0000017E331416A0> argument after 
 ```
 原因就是这个模型返回来的toolcall的参数，不是json格式的。 调试分析确实经常返回了字符串而不是JSON格式
 
-![[Pasted image 20250330200230.png]]
+ 
+![toolcall json](/blog_asset/20250330200230.png)
+
 
 修复：实际上模型返回的JSON多了一层""所以变成字符串了，从可用性的角度来说修复也很简单，多加一次loads就能够提高使用上的准确度 。 
 
