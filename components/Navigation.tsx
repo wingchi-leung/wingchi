@@ -16,12 +16,9 @@ const agrandirNarrow = localFont({
 export default function Navigation() {
   return (
     <nav
-      className="py-4 px-6 mb-8 relative"  
+      className="py-4 px-4 md:px-6 mb-8 relative"  
       style={{
         backgroundColor: 'rgb(250,249,245)',
-        display: 'flex',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
       }}
     >
       {/* <img
@@ -39,39 +36,30 @@ export default function Navigation() {
         }}
       /> */}
       <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          marginLeft: '260px',
-          marginTop: '20px',
-        }}
+        className="flex flex-col items-center md:flex-row md:justify-center w-full"
       >
         <div
-          className={`text-6xl font-bold ${bubbleboddy.className}`}
+          className={`text-4xl md:text-6xl font-bold text-center mb-4 md:mb-0 ${bubbleboddy.className}`}
           style={{
             color: 'rgb(171, 155, 137)',
+
           }}
         >
-          🙌Wingchi
+          Wingchi
         </div>
         <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            marginLeft: '50px',
-          }}
+          className="flex flex-col items-center md:items-start md:ml-8"
         >
           <div
-            className={`text-3xl font-bold ${agrandirNarrow.className}`}
+            className={`text-xl md:text-3xl font-bold text-center md:text-left ${agrandirNarrow.className}`}
             style={{
               color: 'rgb(171, 155, 137)',
               fontStyle: 'italic',
               lineHeight: '1.2',
             }}
           >
-            Coding, Writing  and Shipping
+            Coding, Writing and Shipping
           </div>
-           
         </div>
       </div>
       
