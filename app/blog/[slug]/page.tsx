@@ -45,12 +45,24 @@ export default async function BlogPost({ params }: BlogPostProps) {
   const { slug } = params;
   const post = await getBlogPost(slug);
 
- 
   if (!post) {
     return <div>Blog post not found</div>;
   }
 
   return (
-      <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: post.html }} />
+    <div className="px-4 md:px-8 lg:px-16 max-w-screen-lg mx-auto">
+      <article className="my-8">
+        <h1 className="text-2xl md:text-4xl font-bold mb-6">{post.title}</h1>
+        <div 
+          className="prose prose-sm md:prose-base lg:prose-lg max-w-none
+          prose-headings:font-bold
+          prose-p:text-gray-800 
+          prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+          prose-img:rounded-lg prose-img:mx-auto prose-img:max-w-full prose-img:h-auto"
+          dangerouslySetInnerHTML={{ __html: post.html }} 
+        />
+        <div className="h-10"></div>
+      </article>
+     </div>
   );
 }
